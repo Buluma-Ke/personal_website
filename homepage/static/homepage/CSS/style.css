@@ -3,15 +3,10 @@
    VARIABLES
 ========================= */
 :root {
-  --accent: #d96a39;
-  --accent-dark: #b5542b;
-
-  --dark: #0f0f0f;
-  --dark-soft: #1a1a1a;
-
-  --light: #f4f4f4;
-  --white: #ffffff;
-  --gray: #777;
+  --accent: #879ebf;
+  --dark: #2b313f;
+  --light: #e1dfe1;
+ 
 
   --section-padding: 6rem 1.5rem;
   --container-width: 1100px;
@@ -29,7 +24,7 @@
 
 body {
   font-family: Verdana, sans-serif;
-  background-color: #c8a58f; /* warm background tone */
+  background-color: #aecefc; /* warm background tone */
   color: var(--dark);
   line-height: 1.6;
 }
@@ -66,7 +61,7 @@ a {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--white);
+  color: var(--light);
 }
 
 .btn-primary:hover {
@@ -98,7 +93,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--white);
+  color: var(--light);
 }
 
 .nav-links {
@@ -116,16 +111,18 @@ a {
 /* =========================
    HERO
 ========================= */
+.homepage{
+  height: 100vh;
+  background: url("../images/code.jpg") center/cover no-repeat;
+}
 .hero-section {
   position: relative;
-  height: 100vh;
-  background: url("../images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
-  color: var(--white);
+  color: var(--light);
 }
 
-.hero-section::before {
+.homepage::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -182,7 +179,7 @@ section {
    Services Section
 ========================= */
 .services-section {
-  background: var(--white);
+  background: var(--light);
 }
 
 .services-grid {
@@ -268,7 +265,7 @@ textarea {
 ========================= */
 .footer {
   background: var(--dark);
-  color: var(--white);
+  color: var(--light);
   padding: 2rem 0;
 }
 
