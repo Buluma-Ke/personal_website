@@ -6,7 +6,7 @@
   --accent: #879ebf;
   --dark: #2b313f;
   --light: #e1dfe1;
- 
+
 
   --section-padding: 6rem 1.5rem;
   --container-width: 1100px;
@@ -24,7 +24,7 @@
 
 body {
   font-family: Verdana, sans-serif;
-  background-color: #aecefc; /* warm background tone */
+  background-color: #aecefc; /* cool background tone */
   color: var(--dark);
   line-height: 1.6;
 }
@@ -65,7 +65,7 @@ a {
 }
 
 .btn-primary:hover {
-  background: var(--accent-dark);
+  background: var(--accent);
 }
 
 .btn-outline {
@@ -237,7 +237,7 @@ section {
    Contact Section
 ========================= */
 .contact-section {
-  background: url("../images/contact-bg.jpg") center/cover no-repeat;
+  background: url("../images/nasa.jpg") center/cover no-repeat;
   color: var(--white);
 }
 
