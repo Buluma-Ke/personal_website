@@ -6,12 +6,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanya Tech</title>
-  <link rel="stylesheet" href="{% static 'homepage/CSS/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'homepage/CSS/style.css' %}">
 </head>
 <body>
 
   <!-- ================= HEADER / HERO ================= -->
-  <div class="homepage"> 
+  <div class="homepage">
+<header class="site-header">
   <nav class="navbar">
       <div class="logo">Amanya Tech</div>
       <ul class="nav-links">
@@ -22,6 +26,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+</header>
 
   <header id="hero" class="hero-section">
 
@@ -37,14 +42,14 @@
         <h1 class="hero-title">Albert Okello Buluma</h1>
         <p class="hero-description">
             I am what you get when you mix love for computers and  love for Math.
-            A combined knowledge of statistics and the python languge makes me 
+            A combined knowledge of statistics and the python languge makes me
             the sharpest tool for hire, to cut down your business lossess.
         </p>
         <a href="#portfolio" class="btn btn-primary">More works</a>
       </div>
     </div>
   </header>
-  </div> 
+  </div>
 
   <!-- ================= SERVICES ================= -->
   <section id="services" class="services-section">
@@ -140,7 +145,7 @@
     </div>
   </section>
 
- 
+
 
   <!-- ================= CONTACT ================= -->
   <section id="contact" class="contact-section">
