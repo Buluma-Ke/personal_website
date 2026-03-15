@@ -2,17 +2,32 @@
    VARIABLES
 ========================= */
 :root {
-  --accent: #5b8fd4;
-  --accent-light: #a8c4e8;
-  --accent-glow: rgba(91, 143, 212, 0.25);
-  --dark: #111827;
-  --dark-2: #1e293b;
-  --light: #f0f4fb;
-  --muted: #94a3b8;
-  --white: #ffffff;
-  --section-padding: 7rem 1.5rem;
-  --container-width: 1100px;
-  --radius: 2px;
+  --light:          #E1DFE1;   
+  --dark:           #2B313F;   /* provided */
+  --accent:         #879EBF;   /* provided */
+
+  /* --- Accent Variants (derived from #879EBF) --- */
+  --accent-light:   #B5C6DA;   /* lighter tint of accent */
+  --accent-dark:    #5C7A9E;   /* deeper shade of accent */
+  --accent-glow:    rgba(135, 158, 191, 0.25); /* accent at 25% opacity */
+  --accent-subtle:  rgba(135, 158, 191, 0.08); /* accent at 8% for bg tints */
+
+  /* --- Dark Scale (derived from #2B313F) --- */
+  --dark-2:         #3A4254;   /* slightly lighter than dark */
+  --dark-3:         #4A5568;   /* mid-tone for borders/surfaces */
+
+  /* --- Light Scale (derived from #E1DFE1) --- */
+  --light-2:        #F0EEF0;   /* lighter tint of light */
+  --light-dim:      #C8C5C8;   /* slightly deeper than light */
+
+  /* --- Neutral / Muted --- */
+  --muted:          #8A90A0;   /* desaturated mid between dark and light */
+  --white:          #ffffff;
+
+  /* --- Layout --- */
+  --section-padding:  7rem 1.5rem;
+  --container-width:  1100px;
+  --radius:           2px;
 }
 
 /* =========================
@@ -111,7 +126,6 @@ a {
   z-index: 100;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(12px);
-  /*background: rgba(17, 24, 39, 0.7);*/
   transition: 0.3s;
 }
 
@@ -132,7 +146,7 @@ a {
   letter-spacing: 0.5px;
 }
 
-.logo span {
+.logo {
   color: var(--accent);
 }
 
@@ -147,7 +161,7 @@ a {
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   transition: color 0.2s;
   position: relative;
 }
@@ -182,10 +196,11 @@ a {
   z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(10, 15, 28, 0.97) 0%,
-    rgba(10, 15, 28, 0.75) 20%,
-    rgba(10, 15, 28, 0.2) 50%,
-    rgba(10, 15, 28, 0.0) 100%
+    rgba(0, 0, 0, 1.0)   0%,
+    rgba(0, 0, 0, 1.0)  33%,
+    rgba(0, 0, 0, 0.55) 55%,
+    rgba(0, 0, 0, 0.15) 75%,
+    rgba(0, 0, 0, 0.0) 100%
   );
 }
 
@@ -213,6 +228,10 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+}
+
+.hero-title {
+  font-family: 'Abril Fatface';
 }
 
 .social-sidebar {
