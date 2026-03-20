@@ -22,7 +22,6 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Works</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -196,27 +195,38 @@
 
   <!-- ================= CONTACT ================= -->
   <section id="contact" class="contact-section">
-    <div class="container ">
-      <h2 class="section-title">Send me a message</h2>
-
-      <form id="contact-form" class="contact-form">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
+    <div class="contact-bg"></div>
+    <div class="container contact-inner">
+        <div class="contact-header">
+            <h2 class="section-title">Send me a message</h2>
+            <p class="section-label">I'll get back to you within 24 hours</p>
         </div>
 
-        <div class="form-row">
-          <input type="tel" name="phone" placeholder="Phone number" />
-        </div>
+        <div class="contact-form">
+            <form id="contact-form">
+                {% csrf_token %}
 
-        <div class="form-row">
-          <textarea name="message" placeholder="Write message" rows="5" required></textarea>
-        </div>
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                </div>
 
-        <button type="submit" class="btn btn-primary">Send message</button>
-      </form>
+                <div class="form-row full">
+                    <input type="tel" name="phone" placeholder="Phone number (optional)" />
+                </div>
+
+                <div class="form-row full">
+                    <textarea name="message" placeholder="Write your message..." rows="5" required></textarea>
+                </div>
+
+                <div class="form-submit">
+                   <button type="submit" class="btn btn-primary">
+                    <span>Send message</span>
+                  </button>
+            </form>
+        </div>
     </div>
-  </section>
+</section>
 
   <!-- ================= FOOTER ================= -->
   <footer id="footer" class="footer">

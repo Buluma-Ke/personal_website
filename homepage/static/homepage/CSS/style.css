@@ -591,9 +591,28 @@ section {
     /*display: grid;
   grid-template-columns: 1fr 1.2fr;*/
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;  /* stacks items vertically */
+    }
+
+    .about-image {
+        order: -1;               /* image goes above text */
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;          /* centers the image */
+    }
+
+    .about-content {
+        width: 100%;
+        text-align: center;      /* optional */
+    }
+}
+
 
 .about-image-wrap {
   position: relative;
@@ -603,6 +622,10 @@ section {
     width: 100%;
     max-width: 300px;
     height: auto; /* maintains aspect ratio */
+}
+
+.about-image img:hover {
+    filter: grayscale(0%); /* full color on hover */
 }
 
 .about-image-wrap::before {
@@ -666,78 +689,134 @@ section {
    Contact Section
 ========================= */
 .contact-section {
-  background: var(--dark);
-  position: relative;
-  overflow: hidden;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
 }
 
 .contact-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../images/nasa.jpg") center/cover no-repeat;
-  opacity: 0.08;
-  z-index: 0;
+    position: absolute;
+    inset: 0;
+    background: url("../images/nasa.jpg") center/cover no-repeat;
+    opacity: 0.08;
+    z-index: 0;
 }
 
 .contact-inner {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-header {
-  text-align: center;
-  margin-bottom: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .contact-header .section-label {
-  justify-content: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 .contact-form {
-  max-width: 680px;
-  margin: 0 auto;
+    max-width: 620px;
+    margin: 0 auto;
 }
 
+/* Form rows */
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .form-row.full {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;  /* single column for phone and textarea */
 }
 
+/* Inputs and textarea */
 input, textarea {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  font-family: 'Quicksand', sans-serif;
-  font-size: 0.9rem;
-  transition: border-color 0.3s, background 0.3s;
-  outline: none;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* minimalistic underline only */
+    color: var(--white);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+    outline: none;
 }
 
-input::placeholder, textarea::placeholder { color: var(--muted); }
+input::placeholder, textarea::placeholder {
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
 
 input:focus, textarea:focus {
-  border-color: var(--accent);
-  background: rgba(91, 143, 212, 0.05);
+    border-bottom-color: var(--accent); /* accent underline on focus */
 }
 
 textarea {
-  resize: vertical;
-  min-height: 140px;
+    resize: none;
+    min-height: 120px;
 }
 
 .form-submit {
-  margin-top: 1.5rem;
-  text-align: center;
+    margin-top: 2rem;
+    text-align: center;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;  /* stack on mobile */
+    }
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.85rem 2.5rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* fill effect on hover */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.btn-primary:hover::before {
+    transform: scaleX(1);  /* slides in from left */
+}
+
+.btn-primary:hover {
+    color: var(--dark);    /* text darkens as fill comes in */
+}
+
+/* keep text above the fill */
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+}
 /* =========================
    Footer
 ========================= */
